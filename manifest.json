@@ -1,0 +1,21 @@
+{
+
+    "manifest_version": 2,
+    "name": "NMM-AutoDownloader",
+    "version": "1.0",
+  
+    "description": "Allows you to download mods from the browse page of Nexus Mod Manager",
+  
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.nexusmods.com/*/mods/"],
+        "js": ["downloader.js"]
+      }
+    ]
+    
+  
+  }
