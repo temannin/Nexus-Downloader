@@ -15,7 +15,6 @@ function connected(p) {
         // modPage.then(onCreated, onError);
 
         function onCreated(windowInfo) {
-
             var removed = browser.windows.remove(windowInfo.id);
           }
           
