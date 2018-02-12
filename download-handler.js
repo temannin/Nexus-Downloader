@@ -8,14 +8,15 @@ function connected(p) {
     portFromCS.onMessage.addListener(function (m) {
         var test = browser.windows.create({
             url: m.greeting,
-            allowScriptsToClose: true
+            allowScriptsToClose: true,
+            state: "maximized"
         });
         test.then(onCreated, onError);
-        // var test = window.open(m.greeting, '_new');
-        // modPage.then(onCreated, onError);
 
         function onCreated(windowInfo) {
-            var removed = browser.windows.remove(windowInfo.id);
+            document.body.style.border = "5px solid red";
+            console.log(windowInfo);
+            // var removed = browser.windows.remove(windowInfo.id);
           }
           
           function onError(error) {
