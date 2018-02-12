@@ -10,15 +10,13 @@ function connected(p) {
             url: m.greeting,
             allowScriptsToClose: true
         });
-        console.log(1);
-        setTimeout(function(){
-           browser.windows.remove(4);
-        }, 2000);
+        test.then(onCreated, onError);
         // var test = window.open(m.greeting, '_new');
         // modPage.then(onCreated, onError);
 
         function onCreated(windowInfo) {
-            window.close();
+
+            var removed = browser.windows.remove(windowInfo.id);
           }
           
           function onError(error) {
