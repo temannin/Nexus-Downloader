@@ -9,7 +9,7 @@ function connected(p) {
         var test = browser.windows.create({
             url: m.greeting,
             allowScriptsToClose: true,
-            state: "maximized"
+            state: "minimized"
         });
         test.then(onCreated, onError);
 
