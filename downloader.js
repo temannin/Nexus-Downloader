@@ -29,9 +29,27 @@ for (let i = 0; i < modList.length; i++) {
 
 }
 
+function onExecuted(result) {
+    console.log(`Mod Downloaded`);
+  }
+  
+  function onError(error) {
+    console.log(`Error: ${error}`);
+  }
+
 function downloadMod(url) {
     // var test = window.open(url, '_blank');
-    var myPort = browser.runtime.connect({ name: "cac410c4672fff93bf0d3186636d8876de3dfeb6@temporary-addon"});
+    var myPort = browser.runtime.connect({ name: "270c24ec7e42abb95306579889c9ef3c39237878@temporary-addon" });
     myPort.postMessage({ greeting: url });
+
+    myPort.onMessage.addListener(function (m) {
+        downloadInit(m.greeting);
+    });
+}
+
+
+function downloadInit(tabId) {
+    var gettingInfo = browser.tabs.get(tabId);
+    gettingInfo.then(onExecuted, onError);
 }
 

@@ -12,14 +12,21 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.nexusmods.com/*/mods/"],
+        "matches": ["*://*.nexusmods.com/*", "*://*.nexusmods.com/*/*/*"],
         "js": ["downloader.js"]
       }
     ],
 
     "background": {
       "scripts": ["download-handler.js"]
-    }
+    },
+
+    "permissions": [
+      "activeTab",
+      "tabs",
+      "*://*.nexusmods.com/*",
+      "*://*.nexusmods.com/*/*/*"
+  ]
     
   
   }

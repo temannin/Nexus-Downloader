@@ -3,7 +3,7 @@ var modPage;
 
 function connected(p) {
     portFromCS = p;
-    portFromCS.postMessage({ greeting: "hi there content script!" });
+    
 
     portFromCS.onMessage.addListener(function (m) {
         var test = browser.windows.create({
@@ -16,6 +16,7 @@ function connected(p) {
         function onCreated(windowInfo) {
             document.body.style.border = "5px solid red";
             console.log(windowInfo);
+            portFromCS.postMessage({ greeting: windowInfo.id});
             // var removed = browser.windows.remove(windowInfo.id);
           }
           
