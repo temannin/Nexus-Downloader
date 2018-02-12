@@ -10,7 +10,11 @@ var items = modList[0].getElementsByTagName("li");
 var ul = items[0].getElementsByTagName("ul");
 var listItems = ul[0].getElementsByTagName("li");
 
-console.log(listItems[0].innerHTML);
+var link = listItems[0].getElementsByTagName('a')[0].href; // retrieves URL for each independent mod - needs the hardcoded 0
+console.log(link);
+
+
+
 
 
 
