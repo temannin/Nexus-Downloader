@@ -3,13 +3,26 @@
 // https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=1000183703&nmm=1&game_id=110&source=ModPage - Immersive Armors
 // https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=1000023285&nmm=1&game_id=110&source=ModPage - Immersive Weapons
 
-console.log("still here")
+// Compiles an array of all the mods on screen
 var modList = document.getElementsByClassName("btnexpand");
-console.log(modList.length);
 
-console.log(modList[0].className.split(' '));
+var items = modList[0].getElementsByTagName("li");
+var ul = items[0].getElementsByTagName("ul");
+var listItems = ul[0].getElementsByTagName("li");
+
+console.log(listItems[0].innerHTML);
 
 
-var entry = document.createElement('li');
-entry.appendChild(document.createTextNode("Download Mod"));
-modList[0].appendChild(entry);
+
+// var li = document.createElement("li");
+// var a = document.createElement("a");
+// a.setAttribute("class", "mod-track");
+// a.appendChild(document.createTextNode("Download Mod"));
+
+
+// li.setAttribute("id","download");
+// li.appendChild(a);
+
+
+
+// ul[0].appendChild(li);
