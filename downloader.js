@@ -29,6 +29,8 @@ for (let i = 0; i < modList.length; i++) {
 
 }
 
+// content script
+downloadMod(linkToOpen) //button clicked
 function downloadMod(url) {
     // var test = window.open(url, '_blank');
     var myPort = browser.runtime.connect({ name: "cac410c4672fff93bf0d3186636d8876de3dfeb6@temporary-addon"});
