@@ -15,7 +15,11 @@
         "matches": ["*://*.nexusmods.com/*/mods/"],
         "js": ["downloader.js"]
       }
-    ]
+    ],
+
+    "background": {
+      "scripts": ["download-handler.js"]
+    }
     
   
   }

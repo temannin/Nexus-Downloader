@@ -19,19 +19,19 @@ for (let i = 0; i < modList.length; i++) {
     span.setAttribute("class", "mod-track");
     span.appendChild(document.createTextNode("Download Mod"));
 
-    li.setAttribute("id","download");
+    li.setAttribute("id", "download");
     li.appendChild(span);
-    li.addEventListener("click", function() {
+    li.addEventListener("click", function () {
         downloadMod(url);
     });
 
     ul[0].appendChild(li);
-   
+
 }
 
 function downloadMod(url) {
-    var currentWindow = window.location;
-    window.open(url, '_blank');
-    console.log(window.location);
+    // var test = window.open(url, '_blank');
+    var myPort = browser.runtime.connect({ name: "cac410c4672fff93bf0d3186636d8876de3dfeb6@temporary-addon"});
+    myPort.postMessage({ greeting: url });
 }
 
