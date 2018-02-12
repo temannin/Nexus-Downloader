@@ -6,9 +6,13 @@ function connected(p) {
     portFromCS.postMessage({ greeting: "hi there content script!" });
 
     portFromCS.onMessage.addListener(function (m) {
-        var test = window.open(m.greeting);
+        var test = browser.windows.create({
+            url: m.greeting,
+            allowScriptsToClose: true
+        });
+        console.log(1);
         setTimeout(function(){
-           test.close();
+           browser.windows.remove(4);
         }, 2000);
         // var test = window.open(m.greeting, '_new');
         // modPage.then(onCreated, onError);
