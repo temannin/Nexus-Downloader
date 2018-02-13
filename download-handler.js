@@ -28,7 +28,7 @@ function connected(p) {
         console.log("Sending code to " + tabId);
 
         function onExecuted(result) {
-            console.log(`Mod Downloaded`);
+            console.log(`We made it green`);
         }
 
         function onError(error) {
