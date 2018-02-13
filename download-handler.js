@@ -3,15 +3,15 @@ var modPage;
 
 function connected(p) {
     portFromCS = p;
-    console.log("connected");
+    
 
     portFromCS.onMessage.addListener(function (m) {
-        console.log(m.greeting);
-
-        var modWindow = browser.tabs.create({
+        var test = browser.windows.create({
             url: m.greeting,
-            active: false
+            allowScriptsToClose: true,
+            state: "minimized"
         });
+<<<<<<< HEAD
         modWindow.then(onCreated, onError);
 
         function onCreated(tab) {
@@ -31,42 +31,24 @@ function connected(p) {
         }
 
         function onError(error) {
+=======
+        test.then(onCreated, onError);
+
+        function onCreated(windowInfo) {
+            document.body.style.border = "5px solid red";
+            console.log(windowInfo);
+            portFromCS.postMessage({ greeting: windowInfo.id});
+            // var removed = browser.windows.remove(windowInfo.id);
+          }
+          
+          function onError(error) {
+>>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
             console.log(`Error: ${error}`);
-        }
+          }
 
-        var downloadClick = 'var btns = document.getElementsByClassName("btn inline-flex popup-btn-ajax"); btns[0].click()';
-
-        var port = browser.tabs.executeScript(
-            tabId, {
-                code: downloadClick
-            }
-        );
-        port.then(onExecuted, onError);
+    });
 
 
-
-    }
-
-    // portFromCS.onMessage.addListener(function (m) {
-    //     console.log(m.greeting);
-    //     var test = browser.windows.create({
-    //         url: m.greeting,
-    //         allowScriptsToClose: true
-    //     });
-    //     test.then(onCreated, onError);
-
-    //     function onCreated(windowInfo) {
-    //         downloadInit(windowInfo.id);
-    //     }
-
-    // });
 }
 
-
-
-function handleMessage(request, sender, sendResponse) {
-    console.log(`${request.content}`);
-    // sendResponse({response: "response from background script"});
-}
 browser.runtime.onConnect.addListener(connected);
-
