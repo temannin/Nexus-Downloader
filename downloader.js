@@ -3,6 +3,8 @@
 // https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=1000183703&nmm=1&game_id=110&source=ModPage - Immersive Armors
 // https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=1000023285&nmm=1&game_id=110&source=ModPage - Immersive Weapons
 
+var myPort = browser.runtime.connect({ name: "2a1df420b945dc71db85c681379ce0384b820fd0@temporary-addon" });
+
 // Compiles an array of all the mods on screen
 var modList = document.getElementsByClassName("btnexpand");
 
@@ -29,51 +31,6 @@ for (let i = 0; i < modList.length; i++) {
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    function downloadMod(url) {
-        myPort.postMessage({ greeting: url });
-    }
-}, 3000);
-=======
-function onExecuted(result) {
-    console.log(`Mod Downloaded`);
-  }
-  
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-
-function onExecuted(result) {
-    console.log(`Mod Downloaded`);
-  }
-  
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-
-function downloadMod(url) {
-    // var test = window.open(url, '_blank');
-    var myPort = browser.runtime.connect({ name: "270c24ec7e42abb95306579889c9ef3c39237878@temporary-addon" });
-    myPort.postMessage({ greeting: url });
-<<<<<<< HEAD
->>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
-=======
->>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
-=======
 function downloadMod(url) {
     myPort.postMessage({ greeting: url });
 }
->>>>>>> parent of bb1ce39... Janky workaround to scale extenstion to every mod no matter what page.
-
-    myPort.onMessage.addListener(function (m) {
-        downloadInit(m.greeting);
-    });
-}
-
-
-function downloadInit(tabId) {
-    var gettingInfo = browser.tabs.get(tabId);
-    gettingInfo.then(onExecuted, onError);
-}
-
