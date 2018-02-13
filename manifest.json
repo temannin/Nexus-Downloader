@@ -12,7 +12,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.nexusmods.com/*", "*://*.nexusmods.com/*/*/*"],
+        "matches": ["*://*.nexusmods.com/*", "*://*.nexusmods.com/*/*/*", "https://www.nexusmods.com/skyrim/mods/?BH=0"],
         "js": ["downloader.js"]
       }
     ],
