@@ -10,6 +10,9 @@ appendMods();
 
 
 function appendMods() {
+
+
+
     // Compiles an array of all the mods on screen
     var modList = document.getElementsByClassName("btnexpand");
     for (let i = 0; i < modList.length; i++) {
@@ -25,7 +28,9 @@ function appendMods() {
         span.setAttribute("class", "mod-track");
         span.appendChild(document.createTextNode("Download Mod"));
 
-        li.setAttribute("id", "download");
+        var id = "download" + i;
+
+        li.setAttribute("id", id);
         li.appendChild(span);
         li.addEventListener("click", function () {
             downloadMod(url);
