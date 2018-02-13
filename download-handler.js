@@ -12,6 +12,7 @@ function connected(p) {
             state: "minimized"
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
         modWindow.then(onCreated, onError);
 
         function onCreated(tab) {
@@ -32,6 +33,8 @@ function connected(p) {
 
         function onError(error) {
 =======
+=======
+>>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
         test.then(onCreated, onError);
 
         function onCreated(windowInfo) {
@@ -42,6 +45,7 @@ function connected(p) {
           }
           
           function onError(error) {
+<<<<<<< HEAD
 >>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
             console.log(`Error: ${error}`);
           }
@@ -49,6 +53,14 @@ function connected(p) {
     });
 
 
+=======
+            console.log(`Error: ${error}`);
+          }
+
+    });
+
+
+>>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
 }
 
 browser.runtime.onConnect.addListener(connected);

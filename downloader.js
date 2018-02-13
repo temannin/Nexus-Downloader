@@ -44,10 +44,21 @@ function onExecuted(result) {
     console.log(`Error: ${error}`);
   }
 
+function onExecuted(result) {
+    console.log(`Mod Downloaded`);
+  }
+  
+  function onError(error) {
+    console.log(`Error: ${error}`);
+  }
+
 function downloadMod(url) {
     // var test = window.open(url, '_blank');
     var myPort = browser.runtime.connect({ name: "270c24ec7e42abb95306579889c9ef3c39237878@temporary-addon" });
     myPort.postMessage({ greeting: url });
+<<<<<<< HEAD
+>>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
+=======
 >>>>>>> parent of 0df9d46... Extension can finally download  mods however does not scale across multiple pages
 
     myPort.onMessage.addListener(function (m) {
