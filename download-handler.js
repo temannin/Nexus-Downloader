@@ -27,7 +27,8 @@ function connected(p) {
         console.log("Sending code to " + tabId);
 
         function onExecuted(result) {
-            console.log(`We made it green`);
+            // console.log(browser.tabs.get(tabId));
+            // browser.tabs.remove(tabId);
         }
 
         function onError(error) {
