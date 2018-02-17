@@ -47,20 +47,6 @@ function connected(p) {
 
 
     }
-
-    // portFromCS.onMessage.addListener(function (m) {
-    //     console.log(m.greeting);
-    //     var test = browser.windows.create({
-    //         url: m.greeting,
-    //         allowScriptsToClose: true
-    //     });
-    //     test.then(onCreated, onError);
-
-    //     function onCreated(windowInfo) {
-    //         downloadInit(windowInfo.id);
-    //     }
-
-    // });
 }
 
 
